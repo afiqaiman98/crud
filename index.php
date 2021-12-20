@@ -75,11 +75,11 @@
           <input type="hidden" name="id" value="<?php echo $id?>"
           <div class = "form-group">
           <label>Name</label>
-          <input type = "text" name = "name" class = "form-control" value="<?php echo $name; ?>" placeholder = "Enter your name">
+          <input type = "text" name = "name" class = "form-control" value="<?php echo $name; ?>" placeholder = "Enter your foking name">
           </div>
           <div class = "form-group">
           <label>Location</label>
-          <input type = "text" name = "location" class = "form-control" value="<?php echo $location;?>" placeholder = "Enter your location">
+          <input type = "text" name = "location" class = "form-control" value="<?php echo $location;?>" placeholder = "Enter your foking location">
           </div>
           <div class = "form-group">
 
