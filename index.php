@@ -37,8 +37,8 @@
           <thead>
             <tr>
               <th>Name</th>
-              <th>Cats Name</th>
               <th>Location</th>
+              <th>Cat Name</th>
               <th colspan = "2">Action</th>
             </tr> 
           </thead> 
@@ -48,7 +48,7 @@
         <tr>
           <td><?php echo $row['name']; ?></td>
           <td><?php echo $row['location']; ?></td>
-          <td><?php echo $row['catname']; ?></td>
+          
           <td>
             <a href = "index.php?edit=<?php echo $row['id']; ?>"
                 class= "btn btn-info">Edit</a>
@@ -80,16 +80,20 @@
           <input type = "text" name = "name" class = "form-control" value="<?php echo $name; ?>" placeholder = "Enter your foking name">
           </div>
           <div class = "form-group">
-          <label>Cat's name</label>
-          <input type = "text" name = "cname" class = "form-control" value="<?php echo $cname; ?>" placeholder = "Enter your foking cat name">
-          </div>
-          <div class = "form-group">
           <label>Location</label>
           <input type = "text" name = "location" class = "form-control" value="<?php echo $location;?>" placeholder = "Enter your foking location">
           </div>
+          <div class = "form-group">
+          <label>owner id</label>
+          <input type = "text" name = "owner_id" class = "form-control" value="<?php echo $oid;?>" placeholder = "Enter your  location">
+          </div>
+          <div class = "form-group">
+          <label>Cat Name</label>
+          <input type = "text" name = "cname" class = "form-control" value="<?php echo $cname;?>" placeholder = "Enter your foking cat name">
+          </div>
+          </div>
 
           <div class = "form-group">
-
           <?php
           if($update == true):
           ?>
