@@ -28,7 +28,7 @@
 
       <?php
         $mysqli = new mysqli('localhost', 'root', '','crud') or die(mysqli_error($mysqli));
-        $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM data d join table_cat tc on d.id=tc.id") or die($mysqli->error);
         //pre_r($result);
       ?>
 
@@ -39,6 +39,7 @@
               <th>Name</th>
               <th>Location</th>
               <th>Cat Name</th>
+              <th>Cat Age</th>
               <th colspan = "2">Action</th>
             </tr> 
           </thead> 
@@ -48,6 +49,8 @@
         <tr>
           <td><?php echo $row['name']; ?></td>
           <td><?php echo $row['location']; ?></td>
+          <td><?php echo $row['cname']; ?></td>
+          <td><?php echo $row['age']; ?></td>
           
           <td>
             <a href = "index.php?edit=<?php echo $row['id']; ?>"
@@ -84,16 +87,16 @@
           <input type = "text" name = "location" class = "form-control" value="<?php echo $location;?>" placeholder = "Enter your foking location">
           </div>
           <div class = "form-group">
-          <label>owner id</label>
-          <input type = "text" name = "owner_id" class = "form-control" value="<?php echo $oid;?>" placeholder = "Enter your  location">
-          </div>
-          <div class = "form-group">
           <label>Cat Name</label>
           <input type = "text" name = "cname" class = "form-control" value="<?php echo $cname;?>" placeholder = "Enter your foking cat name">
           </div>
+          <div class = "form-group">
+          <label>Age</label>
+          <input type = "text" name = "age" class = "form-control" value="<?php echo $age;?>" placeholder = "Enter your cat age">
+          </div>
           </div>
 
-          <div class = "form-group">
+          <div class = "form-group container">
           <?php
           if($update == true):
           ?>
