@@ -28,7 +28,7 @@
 
       <?php
         $mysqli = new mysqli('localhost', 'root', '','crud') or die(mysqli_error($mysqli));
-        $result = $mysqli->query("SELECT * FROM data d join table_cat tc on d.id=tc.id") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM data d join table_cat tc on d.id=tc.owner_id") or die($mysqli->error);
         //pre_r($result);
       ?>
 
@@ -36,6 +36,7 @@
         <table class="table">
           <thead>
             <tr>
+            <th>ID</th>
               <th>Name</th>
               <th>Location</th>
               <th>Cat Name</th>
@@ -47,6 +48,7 @@
       <?php
         while ($row = $result->fetch_assoc()): ?>
         <tr>
+        <td><?php echo $row['id']; ?></td>
           <td><?php echo $row['name']; ?></td>
           <td><?php echo $row['location']; ?></td>
           <td><?php echo $row['cname']; ?></td>
@@ -77,7 +79,7 @@
 
       <div class = "container-fluid row justify-content-center">
       <form action = "process.php" method = "POST">
-          <input type="hidden" name="id" value="<?php echo $id?>"
+          <input type="hidden" name="id owner_id" value="<?php echo $id?>"
           <div class = "form-group">
           <label>Name</label>
           <input type = "text" name = "name" class = "form-control" value="<?php echo $name; ?>" placeholder = "Enter your foking name">

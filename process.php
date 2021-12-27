@@ -16,13 +16,11 @@ if(isset($_POST['save'])){
     $location = $_POST['location'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
+     
+    $mysqli->query("INSERT into data(name,location)  values('$name','$location')") or die($mysqli->error);
+    $mysqli->query("INSERT into table_cat(owner_id,cname,age) values('data id','$cname','$age')") or die($mysqli->error);
     
-    echo $age;
-    
-    $mysqli->query("INSERT into data(name,location) values('$name','$location')") or die($mysqli->error);
-    $mysqli->query("INSERT into table_cat(cname,age) values('$cname','$age')") or die($mysqli->error);
-    
-    $_SESSION['message'] = "record has been saved!";
+    $_SESSION['message'] = "record  been saved! ";
     $_SESSION['msg_type'] = "success";
 
     header("location: index.php");
@@ -46,6 +44,7 @@ if(isset($_GET['edit'])){
     $result = $mysqli->query("SELECT name,location,cname,age FROM data d join table_cat tc on d.id=tc.id ") or die($mysqli->error);
     if ($result->num_rows){
         $row = $result->fetch_array();
+        $id = $row['id'];
         $name = $row['name'];
         $location = $row['location']; 
         $cname = $row['cname'];
