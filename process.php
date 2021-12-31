@@ -11,40 +11,14 @@ $age = '';
 $update = false;
 $id = 0;
 
-// if (isset($_POST['save'])) {
-//     $name = $_POST['name'];
-//     $cname = $_POST['cname'];
-//     $age = $_POST['age'];
-//     $breed = $_POST['breed'];
-
-//     $sql = "INSERT into data(name)  values('$name')";
-//     if (mysqli_query($mysqli, $sql)) {
-//         $last_id = mysqli_insert_id($mysqli);
-//     }
-
-//     $sql = "INSERT into table_cat(owner_id,cname,age) values($last_id,'$cname','$age')";
-//     if (!mysqli_query($mysqli, $sql)) {
-//         die();
-//     }
-
-//     $_SESSION['message'] = "record  been saved! ";
-//     $_SESSION['msg_type'] = "success";
-
-//     header("location: index.php");
-// }
-
 if (isset($_POST['save'])) {
     $owner_id = $_POST['id'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
 
-    // $sql = "INSERT into data(name)  values('$name')";
-    // if (mysqli_query($mysqli, $sql)) {
-    //     $last_id = mysqli_insert_id($mysqli);
-    // }
 
-    $sql = "INSERT into table_cat(owner_id,cname,age) values($owner_id,'$cname','$age')";
+    $sql = "INSERT into table_cat(owner_id,cname,age) values($owner_id,'$cname','$age','$breed)";
 
     if (!mysqli_query($mysqli, $sql)) {
         die();
@@ -53,7 +27,7 @@ if (isset($_POST['save'])) {
     $_SESSION['message'] = "record  been saved! ";
     $_SESSION['msg_type'] = "success";
 
-    header("location: index.php");
+
 }
 
 if (isset($_GET['delete'])) {
