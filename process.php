@@ -10,12 +10,14 @@ $cname = '';
 $age = '';
 $breed = '';
 $update = false;
-$id= 0;
+$cat_id= 0;
+$id=0;
 
 
 
 if (isset($_POST['save'])) {
     $owner_id = $_POST['id'];
+    $cat_id =$_POST['cat_id'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
@@ -61,13 +63,12 @@ if (isset($_GET['delete'])) {
 
 
 if (isset($_GET['edit'])) {
-    $id = $_GET['edit'];
+    $cat_id = $_GET['edit'];
     $update = true;
-    $result = $mysqli->query("SELECT * FROM data d join table_cat tc on d.id=tc.owner_id ") or die($mysqli->error);
+    $result = $mysqli->query("SELECT * FROM table_cat where cat_id=".$cat_id."") or die($mysqli->error);
     if ($result->num_rows) {
         $row = $result->fetch_array();
-        $id = $row['id'];
-        $name = $row['name'];
+        $cat_id = $row['cat_id'];
         $cname = $row['cname'];
         $age = $row['age'];
         $breed = $row['breed'];
@@ -75,13 +76,12 @@ if (isset($_GET['edit'])) {
 }
 
 if (isset($_POST['update'])) {
-    $id = $_POST['id'];
-    $name = $_POST['name'];
+    $cat_id = $_POST['id'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
 
-    $result1 = $mysqli->query("UPDATE table_cat SET cname = '$cname', age = '$age' , breed = '$breed' WHERE cat_id=$id") or die($mysqli->error);
+    $result = $mysqli->query("UPDATE table_cat SET cname = '$cname', age = '$age' , breed = '$breed' WHERE cat_id=$cat_id") or die($mysqli->error);
 
     $_SESSION['message'] = "Record has been updated";
     $_SESSION['msg_type'] = "warning";

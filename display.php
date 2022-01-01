@@ -46,7 +46,7 @@
             <td><?php echo $row['breed']; ?></td>
 
             <td>
-              <a href="display.php?edit=<?php echo $row['cat_id']; ?>" class="btn btn-info">Edit</a>
+              <a href="index.php?edit=<?php echo $row['cat_id']; ?>" class="btn btn-info">Edit</a>
               <a href="process.php?delete=<?php echo $row['cat_id']; ?>" class="btn btn-danger">Delete</a>
             </td>
           </tr>

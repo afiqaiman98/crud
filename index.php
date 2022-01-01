@@ -22,7 +22,7 @@
     ?>
     <div class="container-fluid row justify-content-center">
       <form action="process.php" method="POST">
-        <input type="hidden" name="id owner_id" value="<?php echo $id ?>" 
+        <input type="hidden" name="id cat_id" value="<?php echo $cat_id ?>" 
         <label>Name</label>
 
         <select name="id" class="form-control">
@@ -34,11 +34,11 @@
         </select>
     <div class="form-group">
       <label>Cat Name</label>
-      <input type="text" name="cname" class="form-control" value="<?php echo $cname; ?>" placeholder="Enter your foking location">
+      <input type="text" name="cname" class="form-control" value="<?php echo $cname; ?>" placeholder="Enter cat name">
     </div>
     <div class="form-group">
       <label>Age</label>
-      <input type="text" name="age" class="form-control" value="<?php echo $age; ?>" placeholder="Enter your foking cat name">
+      <input type="text" name="age" class="form-control" value="<?php echo $age; ?>" placeholder="Enter cat age ">
     </div>
     <div class="form-group">
       <label>Breed</label>
