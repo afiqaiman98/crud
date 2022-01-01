@@ -16,15 +16,14 @@ $id=0;
 
 
 if (isset($_POST['save'])) {
-    $owner_id = $_POST['id'];
-    $cat_id =$_POST['cat_id'];
+    $owner_id =$_POST['id'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
 
 
 
-    $sql = "INSERT into table_cat(owner_id,cname,age,breed) values($owner_id,'$cname','$age','$breed')";
+    $sql = "INSERT into table_cat(owner_id,cname,age,breed) values('$owner_id','$cname','$age','$breed')";
 
     if (!mysqli_query($mysqli, $sql)) {
         die();
@@ -76,7 +75,7 @@ if (isset($_GET['edit'])) {
 }
 
 if (isset($_POST['update'])) {
-    $cat_id = $_POST['id'];
+    $cat_id = $_POST['cat_id'];
     $cname = $_POST['cname'];
     $age = $_POST['age'];
     $breed = $_POST['breed'];
