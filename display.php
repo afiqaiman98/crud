@@ -1,5 +1,5 @@
 <?php include "header.php";?>
-<?php require_once 'process.php'; ?>
+<?php require_once 'includes\process.php'; ?>
 <?php
 
   if (isset($_SESSION['message'])) : ?>
