@@ -45,22 +45,6 @@ if (isset($_GET['delete'])) {
 }
 
 
-
-// sql to delete a record
-// $sql = "DELETE  FROM table_cat WHERE cat_id=$id";
-
-// if (!$mysqli->query($sql) === TRUE) {
-//   echo "Error deleting record: " . $mysqli->error;
-// } else {
-//     echo "Record deleted successfully";
-    
-// }
-
-
-
-
-
-
 if (isset($_GET['edit'])) {
     $cat_id = $_GET['edit'];
     $update = true;
